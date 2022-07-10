@@ -16,6 +16,18 @@ public class TicTocToe {
 
     public static void main(String[] args) {
         System.out.println("Welcome to Tic Toc toe Program");
+        whoWillWin();
+        System.out.println("You want play another game \n1.Yes\n2.No");
+        int choose = scanner.nextInt();
+        if (choose == 1) {
+            System.out.println("Accept for another game");
+            whoWillWin();
+        } else {
+            System.out.println("Rejected for the another game");
+        }
+    }
+
+    public static void whoWillWin() {
         ticTacToe();
         userTurn = userChoose(scanner);
         computerTurn = (userTurn == 'X') ? 'O' : 'X';
@@ -65,7 +77,6 @@ public class TicTocToe {
                 }
             }
         }
-
     }
 
     public static void createBoard() {
