@@ -138,12 +138,19 @@ public class TicTocToe {
                     break;
                 default:
                     System.out.println("Choose correct number");
-
+                    return;
             }
-
+            winner(userTurn);
+        } else if (user == '2') {
+            turnCount = turnCount + 1;
+            System.out.println("Computer turn");
+            if (turnCount == 2 || turnCount == 3 || turnCount == 4)
+                blockUser();
+            else
+                computerMove();
+            winner(computerTurn);
         }
     }
-
 
     public static void computerMove() {
         boolean flag = false;
@@ -324,5 +331,4 @@ public class TicTocToe {
         } else
             computerMove();
     }
-
 }
